@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rol', function (Blueprint $table) {
+        Schema::create('menu', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre', 50)->unique();
+            $table->unsignedInteger('menu_id')->default(0);
+            $table->string('nombre', 50);
+            $table->string('url', 100);
+            $table->unsignedInteger('orden')->default(0);
+            $table->string('icono', 50)->nullable();
             $table->timestamps();
-            $table->charset = 'utf8mb4';
-            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rol');
+        Schema::dropIfExists('menu');
     }
 };
