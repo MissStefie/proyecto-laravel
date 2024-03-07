@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="{{ asset("assets/$theme/plugins/fontawesome-free/css/all.min.css") }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset("assets/$theme/dist/css/adminlte.min.css") }}">
-
     @yield('styles')
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-boxed">
@@ -34,13 +35,14 @@
         @include("theme/$theme/footer")
         <!-- Fin footer -->
     </div>
-    <!-- jQuery -->
     <script src="{{ asset("assets/$theme/plugins/jquery/jquery.min.js") }}"></script>
-    <!-- Bootstrap 4 -->
     <script src="{{ asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
-    <!-- AdminLTE App -->
     <script src="{{ asset("assets/$theme/dist/js/adminlte.min.js") }}"></script>
-    @yield('scripts')        
+    @yield('scriptsPlugins')
+    <script src="{{ asset('assets/js/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-validation/localization/messages_es.min.js') }}"></script>
+    <script src="{{ asset('assets/js/funciones.js') }}"></script>
+    @yield('scripts')
 </body>
 
 </html>
